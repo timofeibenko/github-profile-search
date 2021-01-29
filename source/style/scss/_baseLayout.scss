@@ -1,0 +1,23 @@
+.wrap{
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+}
+
+.main-panel{
+  position: relative;
+  z-index: 99;
+  max-width: 60%;
+  max-height: max-content;
+  margin: 0 auto;
+  border-radius: .5rem;
+
+  @include respond-below(sm) {
+    width: 80%;
+    max-width: 80%;
+  }
+}

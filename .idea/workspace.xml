@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f87dbe2d-8e80-4797-a179-808acbcb5846" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/github-profiles.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/app.c328ef1a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/app.c328ef1a.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/index.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/loupe.4a2078ff.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/main.077333bd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/main.077333bd.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/main.077333bd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/main.077333bd.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/main.dabf92bd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/loupe.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/style/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/style/css/main.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/style/css/main.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/style/scss/_baseLayout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/style/scss/_breakpoints.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/style/scss/_circles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/style/scss/_header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/style/scss/_main.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/style/scss/_normalize.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1neCgW3mTuS7o5CrTgaRllgTqxN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/source/style/scss" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/style/scss" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source" />
+      <recent name="$PROJECT_DIR$/source/style/scss" />
+      <recent name="$PROJECT_DIR$/source/style/css" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f87dbe2d-8e80-4797-a179-808acbcb5846" name="Default Changelist" comment="" />
+      <created>1611741280865</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611741280865</updated>
+      <workItem from="1611741281962" duration="4958000" />
+      <workItem from="1611753345268" duration="4541000" />
+      <workItem from="1611821044928" duration="5648000" />
+      <workItem from="1611850115250" duration="3605000" />
+      <workItem from="1611913246277" duration="16303000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

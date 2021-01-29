@@ -1,0 +1,92 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+  background: linear-gradient(
+                  to right bottom,
+                  rgba(255, 255, 255, 0.7),
+                  rgba(255, 255, 255, 0.3)
+  );
+  backdrop-filter: blur(2rem);
+
+  @include respond-below(sm) {
+    flex-direction: column;
+  }
+
+  &__title{
+    flex: 2;
+
+    @include respond-below(sm) {
+      font-size: 3rem;
+    }
+
+    @include respond-below(xs) {
+      text-align: center;
+    }
+
+  }
+
+  &__input-container{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    position: relative;
+
+    @include respond-below(sm) {
+      width: 80%;
+    }
+  }
+
+  &__search-input{
+    width: 100%;
+    padding: 1rem .75rem .5rem 3rem;
+    border: none;
+    border-radius: .3rem;
+    margin-left: 1rem;
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  &__search-btn{
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    width: 30px;
+    background: transparent;
+    border: none;
+
+    &:focus{
+      outline: none;
+    }
+
+    & svg{
+      fill: #aaaaaa;
+      transition: all .2s ease-in-out;
+    }
+
+    &:hover svg{
+      fill: #6e6e6e;
+    }
+  }
+
+  &__floating-label{
+    position: absolute;
+    left: 64px;
+    top: 7px;
+    font-size: 1.5rem;
+    color: #aaaaaa;
+    pointer-events: none;
+    transition: all .2s ease-in-out;
+  }
+
+  &__floating-label.active{
+    top: 0px;
+    bottom: 10px;
+    font-size: 11px;
+  }
+}

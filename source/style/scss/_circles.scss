@@ -1,0 +1,68 @@
+.cirle-top,
+.circle-bottom {
+  position: absolute;
+  z-index: -99;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: white;
+  background: linear-gradient(
+                  to right bottom,
+                  rgba(255, 255, 255, 0.8),
+                  rgba(255, 255, 255, 0.3)
+  );
+}
+
+.cirle-top{
+  top: -100px;
+  right: -80px;
+  background: linear-gradient(
+                  to right bottom,
+                  rgba(255, 255, 255, 0.8),
+                  rgba(255, 255, 255, 0.3)
+  );
+
+  animation-name: down-n-up;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.circle-bottom{
+  bottom: -100px;
+  left: -80px;
+  background: linear-gradient(
+                  to left top,
+                  rgba(255, 255, 255, 0.3),
+                  rgba(255, 255, 255, 0.8)
+  );
+
+  animation-name: up-n-down;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes down-n-up {
+  from{
+    top: -100px;
+  }
+  50%{
+    top: -50px;
+  }
+  to{
+    top: -100px;
+  }
+}
+
+@keyframes up-n-down {
+  from{
+    bottom: -100px;
+  }
+  50%{
+    bottom: -50px;
+  }
+  to{
+    bottom: -100px;
+  }
+}
