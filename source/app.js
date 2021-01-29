@@ -1,17 +1,25 @@
-const APIURL = 'https://api.github.com/users/';
+const API_URL = 'https://api.github.com/users/';
 
 const input = document.getElementById('search');
-const inputContainer = document.getElementById('input_container')
-const mainPanel = document.getElementById('main')
-const label = document.getElementById('label')
+const inputContainer = document.getElementById('input_container');
+const mainPanel = document.getElementById('main');
+const label = document.getElementById('label');
+const errorMessage = document.body.querySelector('.header__error-message')
 
-let inputValue
+console.log(errorMessage)
 
 async function getUser(user) {
-    let resp = await fetch(APIURL + user);
+    let resp = await fetch(API_URL + user);
     let respData = await resp.json();
 
-    printUserCard(respData)
+    console.log(respData)
+
+    if (respData.message) {
+        errorMessage.classList.add('active')
+        return
+    } else {
+        printUserCard(respData)
+    }
 }
 
 function printUserCard(user) {
@@ -56,10 +64,11 @@ function printUserCard(user) {
 input.addEventListener('keyup', (e) => {
     if (e.keyCode === 13) {
         let user = input.value;
-        getUser(user);
+        getUser(user)
     }
 
     label.classList.add('active')
+    errorMessage.classList.remove('active')
 
     if(input.value === '' && e.keyCode !== 9) {
         label.classList.remove('active')

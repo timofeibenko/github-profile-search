@@ -118,17 +118,25 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"app.js":[function(require,module,exports) {
-const APIURL = 'https://api.github.com/users/';
+const API_URL = 'https://api.github.com/users/';
 const input = document.getElementById('search');
 const inputContainer = document.getElementById('input_container');
 const mainPanel = document.getElementById('main');
 const label = document.getElementById('label');
-let inputValue;
+const errorMessage = document.body.querySelector('.header__error-message');
+console.log(errorMessage);
 
 async function getUser(user) {
-  let resp = await fetch(APIURL + user);
+  let resp = await fetch(API_URL + user);
   let respData = await resp.json();
-  printUserCard(respData);
+  console.log(respData);
+
+  if (respData.message) {
+    errorMessage.classList.add('active');
+    return;
+  } else {
+    printUserCard(respData);
+  }
 }
 
 function printUserCard(user) {
@@ -156,6 +164,7 @@ input.addEventListener('keyup', e => {
   }
 
   label.classList.add('active');
+  errorMessage.classList.remove('active');
 
   if (input.value === '' && e.keyCode !== 9) {
     label.classList.remove('active');

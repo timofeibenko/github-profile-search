@@ -407,10 +407,10 @@ template {
   }
 }
 .header__input-container {
-  display: flex;
-  justify-content: space-between;
-  flex: 1;
   position: relative;
+  display: flex;
+  flex: 1;
+  margin-right: 1rem;
 }
 @media (max-width: 799px) {
   .header__input-container {
@@ -459,6 +459,16 @@ template {
   bottom: 10px;
   font-size: 11px;
 }
+.header__error-message {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  color: #d42828;
+}
+.header__error-message.active {
+  display: block;
+}
 
 .main {
   display: flex;
@@ -496,7 +506,18 @@ template {
   margin-left: 1rem;
 }
 .main .profile-info__name {
+  width: max-content;
   margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+}
+.main .profile-info__name:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.main .profile-info__name:visited {
+  color: inherit;
 }
 .main .profile-info__description {
   margin-bottom: 1rem;

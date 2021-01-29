@@ -30,10 +30,10 @@
   }
 
   &__input-container{
-    display: flex;
-    justify-content: space-between;
-    flex: 1;
     position: relative;
+    display: flex;
+    flex: 1;
+    margin-right: 1rem;
 
     @include respond-below(sm) {
       width: 80%;
@@ -88,5 +88,17 @@
     top: 0px;
     bottom: 10px;
     font-size: 11px;
+  }
+
+  &__error-message{
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    color: #d42828;
+
+    &.active{
+      display: block;
+    }
   }
 }

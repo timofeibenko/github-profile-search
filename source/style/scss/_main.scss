@@ -38,7 +38,20 @@
     margin-left: 1rem;
 
     &__name{
+      width: max-content;
       margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #000000;
+
+      &:hover{
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      &:visited{
+        color: inherit;
+      }
     }
 
     &__description{
