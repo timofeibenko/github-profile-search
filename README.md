@@ -1,4 +1,4 @@
-### github-profile-search
+# github-profile-search
 
 It's a little app, where you can find a user see some info on his profile. 
 Nothing special, really. 
