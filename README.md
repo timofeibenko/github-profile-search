@@ -5,5 +5,5 @@ Nothing special, really.
 
 (it's kinda mobile-friendly, but I would recommend the desktop ;)
 
-Watch it live here:
-[there's gonna be a link at some point]
+Watch it live [here](https://timofei-benko.github.io/github-profile-search/).
+
