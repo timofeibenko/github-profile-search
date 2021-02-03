@@ -38,6 +38,96 @@
                 </div>
             </header>
 
+            <template id="template">
+
+                    <aside class="sidebar">
+                        <img class="sidebar__profile-pic"
+                             id="profile_pic"
+                             src=""
+                             alt="GitHub profile picture"
+                        >
+                    </aside>
+
+                    <section class="profile-info">
+                        <h2 class="profile-info__name"></h2>
+                        <p class="profile-info__description"></p>
+                        <ul class="profile-info__statistics-list">
+                            <li class="profile-info__statistics-item"><span id="followers"></span>&nbsp;Followers</li>
+                            <li class="profile-info__statistics-item"><span id="following"></span>&nbsp;Following</li>
+                            <li class="profile-info__statistics-item"><span id="repos"></span>&nbsp;Repos</li>
+                        </ul>
+                    </section>
+
+                <style>
+                    main{
+                        display: flex;
+                        padding: 1rem;
+                        background: linear-gradient(
+                                to right bottom,
+                                rgba(255, 255, 255, 0.3),
+                                rgba(255, 255, 255, 0.3)
+                        );
+                        border-bottom-right-radius: .5rem;
+                        border-bottom-left-radius: .5rem;
+                        backdrop-filter: blur(2rem);
+                    }
+                    .sidebar{
+                        flex: 1;
+                    }
+                    .sidebar__profile-pic{
+                         width: 150px;
+                         border-radius: 50%;
+                         border: 2px solid #c6c2c2;
+                    }
+                    .profile-info{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        flex: 3;
+                        margin-left: 1rem;
+                    }
+                    .profile-info__name{
+                        width: max-content;
+                        margin-bottom: 1rem;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        color: #000000;
+                    }
+                    .profile-info__name:hover{
+                         text-decoration: underline;
+                         cursor: pointer;
+                    }
+                    .profile-info__name:visited{
+                         color: inherit;
+                    }
+                    .profile-info__description{
+                         margin-bottom: 1rem;
+                    }
+
+                    .profile-info__statistics-list{
+                         display: flex;
+                    }
+
+                    .profile-info__statistics-item {
+                        margin-right: 1rem;
+                    }
+                    .profile-info span{
+                          font-weight: bold;
+                    }
+                    @media screen and (max-width: 800px) {
+                        main{
+                            flex-direction: column;
+                            align-items: center;
+                        }
+                        .sidebar{
+                            flex: 3;
+                            margin-bottom: 1rem;
+                        }
+                    }
+                </style>
+
+            </template>
+
             <div class="circle-bottom"></div>
             <div class="cirle-top"></div>
 
