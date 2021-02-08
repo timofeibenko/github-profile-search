@@ -27,6 +27,7 @@ function printUserCard(user) {
 
     let userInfo = {
         name: user.login,
+        profile_link: user.html_url,
         bio: function () {
             if (user.bio === null) {
                 return ''
@@ -41,7 +42,7 @@ function printUserCard(user) {
     }
 
     const instance = document.importNode(template.content, true);
-    instance.querySelector('.profile-info__name').innerHTML = userInfo.name;
+    instance.querySelector('.profile-info__name').innerHTML = `<a href="${userInfo.profile_url}">${userInfo.name}</a>`
     instance.querySelector('.profile-info__description').innerHTML = userInfo.bio();
     instance.querySelector('#profile_pic').src = userInfo.profilePic;
     instance.querySelector('#followers').innerHTML = userInfo.followers;

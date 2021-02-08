@@ -19,7 +19,7 @@
   &__title{
     flex: 2;
 
-    @include respond-below(sm) {
+    @include respond-below(sm){
       font-size: 3rem;
     }
 
