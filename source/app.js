@@ -39,7 +39,7 @@ function printUserCard(user) {
                 </aside>
 
                 <section class="profile-info">
-                    <h2 class="profile-info__name">${user.login}</h2>
+                    <a class="profile-info__name"><a href="${user.html_url}"${user.login}</a></h2>
                     <p class="profile-info__description">
                     ${
                         (function () {
