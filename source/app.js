@@ -4,15 +4,11 @@ const input = document.getElementById('search');
 const inputContainer = document.getElementById('input_container');
 const mainPanel = document.getElementById('main');
 const label = document.getElementById('label');
-const errorMessage = document.body.querySelector('.header__error-message')
-
-console.log(errorMessage)
+const errorMessage = document.body.querySelector('.header__error-message');
 
 async function getUser(user) {
     let resp = await fetch(API_URL + user);
     let respData = await resp.json();
-
-    console.log(respData)
 
     if (respData.message) {
         errorMessage.classList.add('active')
@@ -23,42 +19,39 @@ async function getUser(user) {
 }
 
 function printUserCard(user) {
-    if (document.querySelector('.main')) {
-        document.querySelector('.main').remove()
+    const template = document.querySelector('#template');
+
+    let userInfo = {
+        name: user.login,
+        profile_link: user.html_url,
+        bio: function () {
+            if (user.bio === null) {
+                return ''
+            } else {
+                return user.bio
+            }
+        },
+        profilePic: user.avatar_url,
+        followers: user.followers,
+        following: user.following,
+        repos: user.public_repos,
     }
 
-    const main = document.createElement('main')
-    main.classList.add('main');
+    const instance = document.importNode(template.content, true);
+    instance.querySelector('.profile-info__name').innerHTML = `<a href="${userInfo.profile_url}">${userInfo.name}</a>`
+    instance.querySelector('.profile-info__description').innerHTML = userInfo.bio();
+    instance.querySelector('#profile_pic').src = userInfo.profilePic;
+    instance.querySelector('#followers').innerHTML = userInfo.followers;
+    instance.querySelector('#following').innerHTML = userInfo.following;
+    instance.querySelector('#repos').innerHTML = userInfo.repos;
 
-    const card =  `<aside class="sidebar">
-                    <img class="sidebar__profile-pic"
-                         id="profile_pic"
-                         src=${user.avatar_url}
-                         alt="${user} GitHub profile picture"
-                    >
-                </aside>
+    if (document.body.querySelector('main')) {
+        document.body.querySelector('main').remove();
+    }
 
-                <section class="profile-info">
-                    <a class="profile-info__name"><a href="${user.html_url}"${user.login}</a></h2>
-                    <p class="profile-info__description">
-                    ${
-                        (function () {
-                            if (user.bio === null) {
-                                return ''
-                            } else {
-                                return user.bio
-                        }})()
-                    }
-                    </p>
-                    <ul class="profile-info__statistics-list">
-                        <li class="profile-info__statistics-item"><span>${user.followers}</span>&nbsp;Followers</li>
-                        <li class="profile-info__statistics-item"><span>${user.following}</span>&nbsp;Following</li>
-                        <li class="profile-info__statistics-item"><span>${user.public_repos}</span>&nbsp;Repos</li>
-                    </ul>
-                </section>`;
+    let main = document.createElement('main');
 
-    mainPanel.appendChild(main);
-    main.innerHTML += card;
+    mainPanel.appendChild(main).appendChild(instance);
 }
 
 input.addEventListener('keyup', (e) => {
