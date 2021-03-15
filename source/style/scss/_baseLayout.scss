@@ -11,13 +11,8 @@
 .main-panel{
   position: relative;
   z-index: 99;
-  max-width: 60%;
+  max-width: 100%;
   max-height: max-content;
   margin: 0 auto;
   border-radius: .5rem;
-
-  @include respond-below(sm) {
-    width: 80%;
-    max-width: 80%;
-  }
 }

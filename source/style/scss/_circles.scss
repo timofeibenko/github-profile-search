@@ -1,5 +1,6 @@
 .cirle-top,
 .circle-bottom {
+  display: none;
   position: absolute;
   z-index: -99;
   height: 200px;
@@ -11,6 +12,10 @@
                   rgba(255, 255, 255, 0.8),
                   rgba(255, 255, 255, 0.3)
   );
+
+    @include respond-above(xs) {
+        display: block;
+    }
 }
 
 .cirle-top{
