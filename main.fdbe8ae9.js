@@ -117,89 +117,79 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"app.js":[function(require,module,exports) {
-const API_URL = 'https://api.github.com/users/';
-const input = document.getElementById('search');
-const inputContainer = document.getElementById('input_container');
-const mainPanel = document.getElementById('main');
-const label = document.getElementById('label');
-const errorMessage = document.body.querySelector('.header__error-message');
+})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
 
-async function getUser(user) {
-  let resp = await fetch(API_URL + user);
-  let respData = await resp.json();
-
-  if (respData.message) {
-    errorMessage.classList.add('active');
-    return;
-  } else {
-    printUserCard(respData);
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
   }
+
+  return bundleURL;
 }
 
-function printUserCard(user) {
-  const template = document.querySelector('#template');
-  let userInfo = {
-    name: user.login,
-    profile_link: user.html_url,
-    bio: function () {
-      if (user.bio === null) {
-        return '';
-      } else {
-        return user.bio;
-      }
-    },
-    profilePic: user.avatar_url,
-    followers: user.followers,
-    following: user.following,
-    repos: user.public_repos
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
   };
-  const instance = document.importNode(template.content, true);
-  instance.querySelector('.profile-info__name').innerHTML = `<a href="${userInfo.profile_url}">${userInfo.name}</a>`;
-  instance.querySelector('.profile-info__description').innerHTML = userInfo.bio();
-  instance.querySelector('#profile_pic').src = userInfo.profilePic;
-  instance.querySelector('#followers').innerHTML = userInfo.followers;
-  instance.querySelector('#following').innerHTML = userInfo.following;
-  instance.querySelector('#repos').innerHTML = userInfo.repos;
 
-  if (document.body.querySelector('main')) {
-    document.body.querySelector('main').remove();
-  }
-
-  let main = document.createElement('main');
-  mainPanel.appendChild(main).appendChild(instance);
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
 }
 
-input.addEventListener('keyup', e => {
-  if (e.keyCode === 13) {
-    let user = input.value;
-    getUser(user);
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
   }
 
-  label.classList.add('active');
-  errorMessage.classList.remove('active');
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
 
-  if (input.value === '' && e.keyCode !== 9) {
-    label.classList.remove('active');
-  }
-});
-input.addEventListener('focus', () => {
-  label.classList.add('active');
-});
-input.addEventListener('focusout', () => {
-  if (input.value === '') {
-    label.classList.remove('active');
-  }
-});
-inputContainer.addEventListener('click', e => {
-  if (e.target.classList.contains('header__search-btn') || e.target.closest('.header__search-btn svg')) {
-    let user = input.value;
-    getUser(user);
-  }
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
 
-  label.classList.add('active');
-});
-},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"style/css/main.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -402,5 +392,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
-//# sourceMappingURL=/app.c328ef1a.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/main.fdbe8ae9.js.map
