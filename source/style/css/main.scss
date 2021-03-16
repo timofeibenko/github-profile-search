@@ -1,8 +1,8 @@
-@import "../scss/normalize";
-@import "../scss/breakpoints";
+@import "../scss/config/normalize";
+@import "../scss/config/breakpoints";
 
-@import "../scss/baseLayout";
+@import "../scss/config/baseLayout";
 
-@import "../scss/header";
-@import "../scss/main";
-@import "../scss/circles";
+@import "../scss/components/header";
+@import "../scss/components/main";
+@import "../scss/components/circles";
