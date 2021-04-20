@@ -9,7 +9,6 @@ const errorMessage = document.body.querySelector('.header__error-message');
 async function getUser(user) {
     let resp = await fetch(API_URL + user);
     let respData = await resp.json();
-    console.log(respData)
 
     if (respData.message) {
         errorMessage.classList.add('active')
