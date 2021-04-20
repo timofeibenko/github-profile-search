@@ -9,6 +9,7 @@ const errorMessage = document.body.querySelector('.header__error-message');
 async function getUser(user) {
     let resp = await fetch(API_URL + user);
     let respData = await resp.json();
+    console.log(respData)
 
     if (respData.message) {
         errorMessage.classList.add('active')
@@ -24,13 +25,7 @@ function printUserCard(user) {
     let userInfo = {
         name: user.login,
         profile_link: user.html_url,
-        bio: function () {
-            if (user.bio === null) {
-                return ''
-            } else {
-                return user.bio
-            }
-        },
+        bio: user.bio,
         profilePic: user.avatar_url,
         followers: user.followers,
         following: user.following,
@@ -38,8 +33,8 @@ function printUserCard(user) {
     }
 
     const instance = document.importNode(template.content, true);
-    instance.querySelector('.profile-info__name').innerHTML = `<a href="${userInfo.profile_url}">${userInfo.name}</a>`
-    instance.querySelector('.profile-info__description').innerHTML = userInfo.bio();
+    instance.querySelector('.profile-info__name').innerHTML = `<a href="${userInfo.profile_link}" target="_blank">${userInfo.name}</a>`
+    instance.querySelector('.profile-info__description').innerHTML = userInfo.bio;
     instance.querySelector('#profile_pic').src = userInfo.profilePic;
     instance.querySelector('#followers').innerHTML = userInfo.followers;
     instance.querySelector('#following').innerHTML = userInfo.following;
